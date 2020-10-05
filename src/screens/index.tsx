@@ -20,6 +20,12 @@ export const index: React.FC<Props> = ({ navigation, route }: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text>index　screen</Text>
+      <TouchableOpacity
+        style={styles.touch}
+        onPress={() => navigation.navigate('Show')}
+      >
+        <Text>Touch</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -28,5 +34,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  touch: {
+    height: 75,
+    width: '100%',
+    borderColor: 'gray',
+    backgroundColor: 'yellow',
   },
 });

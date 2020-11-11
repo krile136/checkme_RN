@@ -14,6 +14,8 @@ import { RouteProp } from '@react-navigation/native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import { ScaledSheet } from 'react-native-size-matters';
 
+import { Button, Appbar } from 'react-native-paper';
+
 type Props = {
   navigation: StackNavigationProp<RootStackParamList, 'index'>;
   route: RouteProp<RootStackParamList, 'index'>;
@@ -22,7 +24,6 @@ type Props = {
 export const index: React.FC<Props> = ({ navigation, route }: Props) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>index　screen</Text>
       <TouchableOpacity
         style={styles.touch}
         onPress={() => navigation.navigate('Show')}
@@ -30,6 +31,14 @@ export const index: React.FC<Props> = ({ navigation, route }: Props) => {
         <Text>Touch</Text>
       </TouchableOpacity>
       <View style={styles.styleMatter}></View>
+      <Button
+        style={styles.button}
+        icon="camera"
+        mode="contained"
+        onPress={() => navigation.navigate('Show')}
+      >
+        button
+      </Button>
     </SafeAreaView>
   );
 };
@@ -50,6 +59,12 @@ const styles = ScaledSheet.create({
     width: scale(300),
     height: verticalScale(50),
     padding: moderateScale(5),
-    margin: '20@s',
+    margin: '25@s',
+  },
+  button: {
+    width: '200@s',
+    height: '50@s',
+    backgroundColor: 'red',
+    marginLeft: '75@s',
   },
 });
